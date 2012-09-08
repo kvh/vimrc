@@ -178,7 +178,7 @@ call s:hifg("Comment"        ,"#9933CC","DarkMagenta",34) " 92
 " 26 instead?
 call s:hifg("Constant"       ,"#339999","DarkCyan",21) " 30
 call s:hifg("rubyNumber"     ,"#CCFF33","Yellow",60) " 190
-call s:hifg("String"         ,"#66FF00","LightGreen",44,82) " 82
+call s:hifg("String"         ,"#93E200","LightGreen",44,82) " 82
 call s:hifg("Identifier"     ,"#FFCC00","Yellow",72) " 220
 call s:hifg("Statement"      ,"#FF6600","Brown",68) " 202
 call s:hifg("PreProc"        ,"#AAFFFF","LightCyan",47) " 213

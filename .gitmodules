@@ -37,15 +37,15 @@
 [submodule "bundle/py.test"]
 	path = bundle/py.test
 	url = https://github.com/alfredodeza/pytest.vim.git
-[submodule "bundle/makegreen"]
-	path = bundle/makegreen
-	url = https://github.com/reinh/vim-makegreen
 [submodule "bundle/tasklist"]
 	path = bundle/tasklist
 	url = https://github.com/vim-scripts/TaskList.vim.git
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = https://github.com/vim-scripts/The-NERD-tree.git
-[submodule "bundle/ropevim"]
-	path = bundle/ropevim
-	url = https://github.com/sontek/rope-vim.git
+[submodule "bundle/python-mode"]
+	path = bundle/python-mode
+	url = git://github.com/klen/python-mode.git
+[submodule "bundle/vim-eunuch"]
+	path = bundle/vim-eunuch
+	url = git://github.com/tpope/vim-eunuch.git

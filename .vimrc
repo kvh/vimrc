@@ -1,5 +1,7 @@
+set nocompatible
+
 filetype off
-call pathogen#infect()
+call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
 set foldmethod=indent
@@ -14,25 +16,38 @@ filetype plugin indent on    " enable loading indent file for filetype
 let g:pyflakes_use_quickfix = 0
 let g:pep8_map='<leader>8'
 
+" supertab and completion settings
 au FileType python set omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
 
-let mapleader = ","
 map <leader>n :NERDTreeToggle<CR>
 
-map <leader>j :RopeGotoDefinition<CR>
+let mapleader = ","
+
+nmap ; :
+
+" Ropevim 
+map <leader>j <C-c>g
 map <leader>r :RopeRename<CR>
+map <leader>i :call RopeAutoImport()<CR>
 
 nmap <leader>a <Esc>:Ack!
 
-" Add the virtualenv's site-packages to vim path
-
-colorscheme jellybeans
+colorscheme mustang2
 set guifont=Inconsolata\ 14
-imap <D-j> <Esc>
+
+" shell should source .bash_profile
+set shell=bash\ --login
+
+imap <C-j> <Esc>
+nnoremap <tab> %
+vnoremap <tab> %
+
+au FocusLost * :wa
 set nobackup
 set nowritebackup
+set noswapfile
 
 set cursorline              " have a line indicate the cursor location
 set ruler                   " show the cursor position all the time
@@ -51,4 +66,33 @@ set softtabstop=4           " <BS> over an autoindent deletes both spaces.
 set expandtab               " Use spaces, not tabs, for autoindent/tab key.
 set shiftround              " rounds indent to a multiple of shiftwidth
 set matchpairs+=<:>         " show matching <> (html mainly) as well
+set number
+set hidden
+
+" search settings
+nnoremap / /\v
+vnoremap / /\v
+set gdefault
+set hlsearch                    " highlight matches
+set incsearch 
+set ignorecase
+set smartcase
+" clear search with ,/
+nmap <silent> ,/ :nohlsearch<CR>
+
+
+" filetype-specific tab adjustments
+au FileType html setl sw=2 sts=2 et
+
+
+" easier navigation between split windows
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+
+nmap <leader>sh   :leftabove  vnew<CR>
+nmap <leader>sl  :rightbelow vnew<CR>
+nmap <leader>sk     :leftabove  new<CR>
+nmap <leader>sj   :rightbelow new<CR>
 

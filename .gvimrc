@@ -1,6 +1,8 @@
 
 if has("gui_macvim")
-  set gfn=Inconsolata:h14
+  set gfn=Consolas:h14
+  imap <D-j> <Esc>
+
   " Fullscreen takes up entire screen
   set fuoptions=maxhorz,maxvert
 
@@ -62,13 +64,13 @@ if has("gui_macvim")
   " Adjust viewports to the same size
   map <Leader>= <C-w>=
   imap <Leader>= <Esc> <C-w>=
+
+    " Don't beep
+    set visualbell
+
+    " Start without the toolbar
+    set guioptions-=T
+
+    " Default gui color scheme
+    color Jellybeans
 endif
-
-" Don't beep
-set visualbell
-
-" Start without the toolbar
-set guioptions-=T
-
-" Default gui color scheme
-color Jellybeans
