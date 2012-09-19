@@ -1,11 +1,13 @@
 set nocompatible
 
 filetype off
-call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
 call pathogen#helptags()
 
 set foldmethod=indent
 set foldlevel=99
+
+let mapleader = ","
 
 map <leader>td <Plug>TaskList
 
@@ -22,8 +24,6 @@ let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
 
 map <leader>n :NERDTreeToggle<CR>
-
-let mapleader = ","
 
 nmap ; :
 
@@ -90,6 +90,9 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
+
+" switch buffers
+nnoremap <c-t> :b#<CR>
 
 nmap <leader>sh   :leftabove  vnew<CR>
 nmap <leader>sl  :rightbelow vnew<CR>

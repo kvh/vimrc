@@ -17,12 +17,14 @@ if has("gui_macvim")
   " Command-Shift-F for Ack
   map <D-F> :Ack<space>
 
+  map <D-r> :perldo s/
+  
   " Command-e for ConqueTerm
   map <D-e> :call StartTerm()<CR>
 
   " Command-/ to toggle comments
-  map <D-/> <plug>NERDCommenterToggle<CR>
-  imap <D-/> <Esc><plug>NERDCommenterToggle<CR>i
+  map <D-/> :NERDCommenterToggle<CR>
+  imap <D-/> <Esc>:NERDCommenterToggle<CR>i
 
 
   " Command-][ to increase/decrease indentation
@@ -71,6 +73,4 @@ if has("gui_macvim")
     " Start without the toolbar
     set guioptions-=T
 
-    " Default gui color scheme
-    color Jellybeans
 endif

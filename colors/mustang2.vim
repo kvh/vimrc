@@ -10,7 +10,7 @@ if exists("syntax_on")
   syntax reset
 endif
 
-let colors_name = "mustang"
+let colors_name = "mustang2"
 
 " Vim >= 7.0 specific colors
 if version >= 700
@@ -53,5 +53,5 @@ hi Todo         guifg=#000000 guibg=#e6ea50 gui=italic
 " Code-specific colors
 hi pythonOperator guifg=#7e8aa2 gui=none ctermfg=103
 
-hi Search     guifg=white	guibg=NONE	cterm=NONE	gui=underline
+hi Search     guifg=white	guibg=#77FAFE	cterm=NONE	gui=none
 
