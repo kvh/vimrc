@@ -15,6 +15,9 @@ syntax on                           " syntax highlighing
 filetype on                          " try to detect filetypes
 filetype plugin indent on    " enable loading indent file for filetype
 
+" filetype maps
+au BufNewFile,BufRead *.jinja set filetype=html
+
 let g:pyflakes_use_quickfix = 0
 let g:pep8_map='<leader>8'
 
@@ -34,7 +37,7 @@ map <leader>i :call RopeAutoImport()<CR>
 
 nmap <leader>a <Esc>:Ack!
 
-colorscheme mustang2
+colorscheme molokai
 set guifont=Inconsolata\ 14
 
 " shell should source .bash_profile
@@ -83,6 +86,9 @@ nmap <silent> ,/ :nohlsearch<CR>
 
 " filetype-specific tab adjustments
 au FileType html setl sw=2 sts=2 et
+au FileType less setl sw=2 sts=2 et
+au FileType css setl sw=2 sts=2 et
+au FileType scss setl sw=2 sts=2 et
 
 
 " easier navigation between split windows

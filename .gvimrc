@@ -1,4 +1,6 @@
 
+colorscheme mustang2
+
 if has("gui_macvim")
   set gfn=Consolas:h14
   imap <D-j> <Esc>
