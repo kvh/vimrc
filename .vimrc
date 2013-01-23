@@ -37,8 +37,6 @@ map <leader>i :call RopeAutoImport()<CR>
 
 nmap <leader>a <Esc>:Ack!
 
-colorscheme molokai
-set guifont=Inconsolata\ 14
 
 " shell should source .bash_profile
 set shell=bash\ --login
@@ -61,11 +59,10 @@ set backspace=2             " Allow backspacing over autoindent, EOL, and BOL
 set showmatch               " Briefly jump to a paren once it's balanced
 set nowrap                  " don't wrap text
 set linebreak               " don't wrap textin the middle of a word
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
 set autoindent              " always set autoindenting on
-set smartindent             " use smart indent if there is no indent file
-set tabstop=4               " <tab> inserts 4 spaces 
-set shiftwidth=4            " but an indent level is 2 spaces wide.
-set softtabstop=4           " <BS> over an autoindent deletes both spaces.
 set expandtab               " Use spaces, not tabs, for autoindent/tab key.
 set shiftround              " rounds indent to a multiple of shiftwidth
 set matchpairs+=<:>         " show matching <> (html mainly) as well
@@ -85,10 +82,7 @@ nmap <silent> ,/ :nohlsearch<CR>
 
 
 " filetype-specific tab adjustments
-au FileType html setl sw=2 sts=2 et
-au FileType less setl sw=2 sts=2 et
-au FileType css setl sw=2 sts=2 et
-au FileType scss setl sw=2 sts=2 et
+au FileType html,htmldjango,less,scss,css setl sw=2 sts=2 ts=2
 
 
 " easier navigation between split windows
@@ -105,3 +99,5 @@ nmap <leader>sl  :rightbelow vnew<CR>
 nmap <leader>sk     :leftabove  new<CR>
 nmap <leader>sj   :rightbelow new<CR>
 
+colorscheme molokai
+set guifont=Inconsolata\ 14
