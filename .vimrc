@@ -1,8 +1,23 @@
 set nocompatible
-
 filetype off
-call pathogen#infect()
-call pathogen#helptags()
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'Lokaltog/powerline'
+Bundle 'mileszs/ack.vim'
+Bundle 'kien/ctrlp'
+Bundle 'wincent/Command-T'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-git'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'vim-scripts/The-NERD-tree'
+Bundle 'ervandew/supertab'
+Bundle 'klen/python-mode'
+
 
 set foldmethod=indent
 set foldlevel=99
@@ -18,8 +33,8 @@ filetype plugin indent on    " enable loading indent file for filetype
 " filetype maps
 au BufNewFile,BufRead *.jinja set filetype=html
 
-let g:pyflakes_use_quickfix = 0
-let g:pep8_map='<leader>8'
+"let g:pyflakes_use_quickfix = 0
+"let g:pep8_map='<leader>8'
 
 " supertab and completion settings
 au FileType python set omnifunc=pythoncomplete#Complete
@@ -28,14 +43,61 @@ set completeopt=menuone,longest,preview
 
 map <leader>n :NERDTreeToggle<CR>
 
+" powerline
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+
+" shortcut for colon
 nmap ; :
 
-" Ropevim 
-map <leader>j <C-c>g
-map <leader>r :RopeRename<CR>
-map <leader>i :call RopeAutoImport()<CR>
-
+nmap <leader>d :TagbarToggle<CR>
 nmap <leader>a <Esc>:Ack!
+
+
+" Python-mode
+" Activate rope
+" Keys:
+" K             Show python docs
+"   Rope autocomplete
+" g     Rope goto definition
+" d     Rope show documentation
+" f     Rope find occurrences
+" b     Set, unset breakpoint (g:pymode_breakpoint enabled)
+" [[            Jump on previous class or function (normal, visual, operator modes)
+" ]]            Jump on next class or function (normal, visual, operator modes)
+" [M            Jump on previous class or method (normal, visual, operator modes)
+" ]M            Jump on next class or method (normal, visual, operator modes)
+let g:pymode_rope = 1
+let g:pymode_rope_autoimport = 1
+let g:pymode_rope_completion = 0
+let g:pymode_rope_goto_definition_bind = '<leader>g'
+let g:pymode_rope_rename_bind = '<leader>r'
+let g:pymode_rope_autoimport_bind = '<leader>i'
+
+" Documentation
+let g:pymode_doc = 0
+let g:pymode_doc_key = 'K'
+
+"Linting
+let g:pymode_lint = 1
+let g:pymode_lint_checker = "pyflakes,pep8"
+" Auto check on save
+let g:pymode_lint_write = 1
+
+" Support virtualenv
+let g:pymode_virtualenv = 1
+
+" Enable breakpoints plugin
+let g:pymode_breakpoint = 1
+let g:pymode_breakpoint_key = 'b'
+
+" syntax highlighting
+let g:pymode_syntax = 1
+let g:pymode_syntax_all = 1
+let g:pymode_syntax_indent_errors = g:pymode_syntax_all
+let g:pymode_syntax_space_errors = g:pymode_syntax_all
+
+" Don't autofold code
+let g:pymode_folding = 0
 
 
 " shell should source .bash_profile

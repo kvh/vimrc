@@ -1,5 +1,5 @@
 
-colorscheme mustang2
+colorscheme molokai
 
 if has("gui_macvim")
   set gfn=Consolas:h14
